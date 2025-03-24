@@ -6,7 +6,8 @@ public class JavaExercises {
     /** Returns an array [1, 2, 3, 4, 5, 6] */
     public static int[] makeDice() {
         // TODO: Fill in this function.
-        return null;
+        int[] a1 = new int[]{1,2,3,4,5,6};
+        return a1;
     }
 
     /** Returns the order depending on the customer.
@@ -15,14 +16,33 @@ public class JavaExercises {
      *  In any other case, return an empty String[] of size 3. */
     public static String[] takeOrder(String customer) {
         // TODO: Fill in this function.
-        return null;
+        if (customer.equals("Ergun")){
+            String[] order = new String[]{"beyti", "pizza", "hamburger", "tea"};
+            return order;
+        }else if(customer.equals("Erik")){
+            String[] order = new String[]{"sushi", "pasta", "avocado", "coffee"};
+            return order;
+        }else{
+            String[] order = new String[]{null,null,null};
+            return order;
+        }
     }
 
     /** Returns the positive difference between the maximum element and minimum element of the given array.
      *  Assumes array is nonempty. */
     public static int findMinMax(int[] array) {
         // TODO: Fill in this function.
-        return 0;
+        int i,maxone,minone;
+        maxone=array[0];
+        minone=array[0];
+        for (i=1; i<array.length;i++){
+            if(array[i]>maxone){
+                maxone=array[i];
+            }if(array[i]<minone){
+                minone=array[i];
+            }
+        }
+        return maxone-minone;
     }
 
     /**
@@ -39,7 +59,23 @@ public class JavaExercises {
 
     private static List<Integer> hailstoneHelper(int x, List<Integer> list) {
         // TODO: Fill in this function.
-        return null;
+        if (x==1){
+            list.add(1);
+            return list;
+        }if(x%2==0){
+            list.add(x);
+            return hailstoneHelper(x/2,list);
+        }else{
+            list.add(x);
+            return hailstoneHelper(x*3+1,list);
+        }
     }
 
+    /*public static void main(String[] args) {
+        List <Integer> list = new ArrayList<>();
+        List <Integer> result = hailstone(10);
+        for (Integer i : result){
+            System.out.println(i);
+        }
+    }*/
 }

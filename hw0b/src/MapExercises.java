@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 public class MapExercises {
     /** Returns a map from every lower case letter to the number corresponding to that letter, where 'a' is
@@ -7,7 +8,13 @@ public class MapExercises {
      */
     public static Map<Character, Integer> letterToNum() {
         // TODO: Fill in this function.
-        return null;
+        int i;
+        int j='a';
+        Map<Character, Integer> map = new HashMap<>();
+        for (i=1;i<=26;i++,j++){
+            map.put((char)j,i);
+        }
+        return map;
     }
 
     /** Returns a map from the integers in the list to their squares. For example, if the input list
